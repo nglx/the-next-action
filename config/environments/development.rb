@@ -17,7 +17,3 @@ config.action_controller.perform_caching             = false
 config.action_mailer.raise_delivery_errors = false
 
 HOST_URL = 'localhost:3000'
-
-config.after_initialize do
-  ActiveMerchant::Billing::Base.mode = :test
-end
