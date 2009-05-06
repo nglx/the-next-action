@@ -1,0 +1,32 @@
+<% form_for :comment, :url => '/contact/send_comment' do |f| -%>
+
+<div class="box">
+<h1>Contact form</h1>
+<p>* required fields<p>
+
+<%= error_message_on 'comment', 'from' %>
+<label>
+    <span>From e-mail*</span>
+    <%= f.text_field :from %>
+</label>
+
+<%= error_message_on 'comment', 'subject' %>
+<label>
+    <span>Subject*</span>
+    <%= f.select "subject", ["Bug detected","Request improvement","Comment","Other"] %>
+</label>
+
+<%= error_message_on 'comment', 'comment' %>
+<label>
+    <span>Comments*</span>
+    <%= f.text_area :comment, :rows => 15, :cols => 30 %>
+</label>
+
+<div class="spacer">
+    <p>
+    <%= submit_tag 'Send' %>
+    </p>
+</div>
+
+</div>
+<% end -%>

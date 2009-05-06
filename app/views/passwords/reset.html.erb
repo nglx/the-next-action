@@ -1,0 +1,23 @@
+<% form_tag url_for(:action => 'create') do %>
+
+<div class="box">
+<h1>Password reset request</h1>
+<p>Password reset link will be send to the specified email</p>
+<p>* required fields<p>
+
+<label>
+    <span>E-mail*</span>
+    <%= text_field_tag :email %>
+</label>
+
+<div class="spacer">
+    <p>
+    <%= submit_tag 'Send reset link' %>
+    </p>
+    Don't have an accout yet?
+    <%= link_to "Register", '/users/new', { :title => "Rejestruj" } %>
+</div>
+
+
+</div>
+<% end -%>

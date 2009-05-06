@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>The Next Action 2</title>
+        <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css" />
+        <script type="text/javascript" src="ext/adapter/ext/ext-base.js"></script>
+        <script type="text/javascript" src="ext/ext-all.js"></script>
+
+        <script type="text/javascript" src="db/gears.js"></script>
+        <script type="text/javascript" src="db/ext-db.js"></script>
+        <script type="text/javascript" src="db/ext-gears-db.js"></script>
+<% if ENV['RAILS_ENV'] == 'production' %>
+        <script type="text/javascript" src="js/c/all.js"></script>
+<% else %>
+        <script type="text/javascript" src="js/completecol.js"></script>
+        <script type="text/javascript" src="js/metadata.js"></script>
+        <script type="text/javascript" src="js/taskchange.js"></script>
+        <script type="text/javascript" src="js/task.js"></script>
+        <script type="text/javascript" src="js/project.js"></script>
+        <script type="text/javascript" src="js/context.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/offline.js"></script>
+<% end %>
+        <link rel="stylesheet" type="text/css" href="css/tasks.css" />
+
+
+</head>
+<body onload="initOffline()">
+<span></span>
+<ul id="task-views" class="x-hidden">
+    <li>
+        <img src="images/s.gif" class="icon-show-active"/>
+        <a id="view-active" href="#">Active actions</a>
+    </li>
+    <li>
+        <img src="images/s.gif" class="icon-show-complete"/>
+        <a id="view-complete" href="#">Completed actions</a>
+    </li>
+    <li style="display:none" id="details-button-true">
+        <img src="images/s.gif" class="icon-show-details"/>
+        <a id="show-details" href="#">Show details</a>
+    </li>
+    <li style="" id="details-button-false">
+        <img src="images/s.gif" class="icon-hide-details"/>
+        <a id="show-details" href="#">Hide details</a>
+    </li>
+</ul>
+<ul id="task-actions" class="x-hidden">
+    <li id="new-task">
+        <img src="images/s.gif" class="icon-new"/>
+        <a id="action-new" href="#">Add a new action</a>
+    </li>
+    <span class="one">
+    <li style="display:none;">
+        <img src="images/s.gif" class="icon-edit"/>
+        <a id="action-edit" href="#">Edit selected action</a>
+    </li>
+    </span>
+    <span class="action-complete-true">
+    <li style="display:none;">
+        <img src="images/s.gif" class="icon-complete"/>
+        <a id="action-complete" href="#">Mark selected action<span class="s">s</span> completed</a>
+    </li>
+    </span>
+    <span class="action-complete-false" style="display:none;">
+    <li style="display:none;">
+        <img src="images/s.gif" class="icon-active"/>
+        <a id="action-active" href="#">Mark selected action<span class="s">s</span> active</a>
+    </li>
+    </span>
+    <li style="display:none;">
+        <img src="images/s.gif" class="icon-delete"/>
+        <a id="action-delete" href="#">Delete selected action<span class="s">s</span></a>
+    </li>
+</ul>
+<ul id="task-grouping" class="x-hidden">
+    <li>
+        <img src="images/s.gif" class="icon-by-category"/>
+        <a id="group-project" href="#">By Project</a>
+    </li>
+    <li>
+        <img src="images/s.gif" class="icon-by-date"/>
+        <a id="group-context" href="#">By Context</a>
+    </li>
+    <!-- li>
+        <img src="images/s.gif" class="icon-no-group"/>
+        <a id="no-group" href="#">No Grouping</a>
+    </li-->
+</ul>
+
+<ul id="copyright" class="x-hidden">
+    <li>
+<!-- AddThis Button BEGIN -->
+<a id="addthis" href="#" title="Bookmark and Share"><img src="images/lg-bookmark-en.gif" width="125" height="16" border="0" alt="Bookmark and Share" /></a>
+<!-- AddThis Button END -->
+    </li>
+    <br>
+    <li>
+        <!-- a href="#">tutorial</a-->
+        <span class="copyright" >&copy; 2008 <a id="visit-home" href="#">theWayOut.eu</a></span>
+        |
+        <a id="contact" href="#">contact</a>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,13 @@
+windows:
+  adapter: sqlite3
+  database: db/test.db
+
+development:
+  adapter: mysql
+  database: nextaction
+  timeout: 5000
+  username: root
+  password: mysql
+  socket: /var/run/mysqld/mysqld.sock
+
+production:

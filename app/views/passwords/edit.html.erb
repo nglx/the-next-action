@@ -1,0 +1,24 @@
+<% form_tag url_for(:action => "update", :id => params[:id]) do %>
+
+<div class="box">
+<h1>Password reset</h1>
+<p>* required fields<p>
+
+<label>
+    <span>Password*</span>
+    <%= password_field_tag :password %><br />
+</label>
+
+<label>
+    <span>Password confirmation*</span>
+    <%= password_field_tag :password_confirmation %><br />
+</label>
+
+<div class="spacer">
+    <p>
+<%= submit_tag "Reset Your Password" %>
+    </p>
+</div>
+</div>
+
+<% end %>

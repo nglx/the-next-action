@@ -1,0 +1,50 @@
+
+<% form_for :user, :url => '/profile/save' do |f| -%>
+
+<div class="box">
+<h1>Profil użytkownika</h1>
+<p>costam costam<p>
+
+<%= error_message_on 'user', 'firstname' %>
+<label>
+    <span>Imię</span>
+    <%= f.text_field :firstname %>
+</label>
+
+<%= error_message_on 'user', 'lastname' %>
+<label>
+    <span>Nazwisko</span>
+    <%= f.text_field :lastname %>
+</label>
+
+<p>
+Komunikacja - zmiany beda widoczne po potwierdzeniu kanałów komunikacji
+</p>
+
+
+<%= error_message_on 'user', 'email' %>
+<label>
+    <span>E-mail</span>
+    <%= f.text_field :email %>
+</label>
+
+<%= error_message_on 'user', 'phone' %>
+<label>
+    <span>Telefon</span>
+    <%= f.text_field :phone %>
+</label>
+
+<%= error_message_on 'user', 'gadu_gadu' %>
+<label>
+    <span>Gadu-gadu</span>
+    <%= f.text_field :gadu_gadu %>
+</label>
+
+<div class="spacer">
+    <p>
+    <%= submit_tag 'Zapisz zmiany' %>
+    </p>
+    <%= link_to "Formularz zmiany hasła", '/profile/password_change', { :title => "Zmiana hasła" } %>
+</div>
+</div>
+<% end -%>

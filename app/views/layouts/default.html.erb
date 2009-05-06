@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>The Next Action 2</title>
+    <link rel="stylesheet" type="text/css" href="/css/default.css" />
+</head>
+<body>
+
+    <div align=center class="text-align: left;">
+    
+            <br/>
+            <% unless flash[:notice].nil? %>
+                <%= flash[:notice] %><br/>
+            <% end -%>                
+            <br/>
+            <%= @content_for_layout %>
+            <br/>
+            <br/>
+    </div>
+
+</body>
+</html>

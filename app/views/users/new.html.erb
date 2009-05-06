@@ -1,0 +1,72 @@
+<% @user.password = @user.password_confirmation = nil %>
+
+<% form_for :user, :url => users_path do |f| -%>
+
+<div class="box">
+<h1>Register new The Next Action user</h1>
+<p>The account is needed if you want to synchronize your actions between browsers/computers.</p>
+<p>* required fields</p>
+
+<%= error_message_on 'user', 'login' %>
+<label>
+    <span>Login</span>
+    <%= f.text_field :login %>
+</label>
+
+<%= error_message_on 'user', 'firstname' %>
+<label>
+    <span>Firstname</span>
+    <%= f.text_field :firstname %>
+</label>
+
+<%= error_message_on 'user', 'lastname' %>
+<label>
+    <span>Lastname</span>
+    <%= f.text_field :lastname %>
+</label>
+
+<%= error_message_on 'user', 'email' %>
+<label>
+    <span>E-mail</span>
+    <%= f.text_field :email %>
+</label>
+
+<%= error_message_on 'user', 'password' %>
+<label>
+    <span>Password</span>
+    <%= f.password_field :password %>
+</label>
+
+<%= error_message_on 'user', 'password_confirmation' %>
+<label>
+    <span>Confirm password</span>
+    <%= f.password_field :password_confirmation %>
+</label>
+
+<label>
+<span>&nbsp;</span>
+<%= f.check_box :newsletter %> Newsletter
+</label>
+
+<%= error_message_on 'user', 'terms_of_service' %>
+<label>
+<span>&nbsp;</span>
+<%= f.check_box :terms_of_service %> Accept terms of conditions
+</label>
+
+
+<div class="spacer">
+    <p>
+    <%= submit_tag 'Register' %>
+    </p>
+    Forgot password?
+    <%= link_to "Reset", '/passwords/reset', { :title => "Reset password" } %>
+</div>
+
+
+</div>
+<% end -%>
+
+<script type="text/javascript">
+document.forms[0].elements[0].focus();
+</script>

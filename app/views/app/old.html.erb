@@ -1,0 +1,25 @@
+<html>
+<head>
+  <script type="text/javascript" src="/db/gears.js"></script>
+</head>
+<body>
+<script language="javascript">
+  if (!window.google || !google.gears) {
+    alert("You must install Google Gears first.");
+  } else {
+    localServer = google.gears.factory.create("beta.localserver","1.0");
+    store = localServer.removeManagedStore("thenextaction_docset");
+    document.location.href = 'http://<%= request.host_with_port() %>/app';
+  }
+</script>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div align="center">
+Redirecting to new application...
+<br>
+<a href="/app">Click if not redirected in 5 sec.</a>
+</div>
+</body>
+</html>
